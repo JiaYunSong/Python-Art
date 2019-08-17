@@ -151,3 +151,5 @@ penup()
 forward(700)
 
 x=input('按任意键结束……\nCopyleft.Rsmx.2019-06-17')
+
+#GITHUB测试
