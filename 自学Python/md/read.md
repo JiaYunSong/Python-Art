@@ -173,49 +173,82 @@ decimal a=10;
 > > 不可重载
 > > * +=, -=, *=, /=, %=，=, ., ?:, ->, new, is, sizeof, typeof
 
-		(int a)	//按值传递
-		(ref int a)	//引用
-		(out int a)	//按输出传递，即变量最后一个值赋回去
+> **按值传递**
+```
+		(int a)	
+```
 
-		//传递数组给函数
+> **引用**
+```
+		(ref int a)
+```
+
+> **按输出传递，即变量最后一个值赋回去**
+```
+		(out int a)
+```
+
+> **传递数组给函数**
+```
 		(int[] a)
+```
 
-		//参数数组
+> **参数数组**
+```
 		int plus(params int[] arr)
-		//传递时--->
-		plus(512, 720, 250, 567, 889)
+```
 
-		public：所有对象都可以访问；
-		internal：同一个程序集的对象可以访问；
-		protected internal：访问限于当前程序集或派生自包含类的类型。
-		
+> **传递时--->***
+```
+		plus(512, 720, 250, 567, 889)
+```
+
+> **访问权限**
+> > 		public：所有对象都可以访问；
+> > 		internal：同一个程序集的对象可以访问；
+> > 		protected internal：访问限于当前程序集或派生自包含类的类型。
+```
 	}
 
 }
+```
 
-namespace second{			//命名空间声明
+> **命名空间声明**
+```
+namespace second{
 	public class Test{
 	}
+```
 
-	namespace second{		//嵌套命名空间
+> > 嵌套命名空间
+```
+	namespace second{
 	}
 
 }
+```
 
-class TestClass{			//命名空间运用
+> **命名空间运用**
+```
+class TestClass{
 	void hhh(){
 		first.Test;
 		second.Test;
 	}
 }
+```
 
+> **using指令**
+```
 using second;		//using指令：引入命名空间
 using static System.Math;	//指定无需指定类型名称即可访问其静态成员的类型
 using Project = PC.MyCompany;		//起别名
 using (Font font3 = new Font("Arial", 10.0f),	//将实例与代码绑定
             font4 = new Font("Arial", 10.0f))
+```
 
-//预处理器指令
+> **预处理器指令**
+```
 #define PIQ	//定义一系列成为符号的字符
 #if(PIW)	{不会执行}	//测试符号是否为真
 #elif(PIQ)	{会执行}
@@ -232,34 +265,43 @@ using (Font font3 = new Font("Arial", 10.0f),	//将实例与代码绑定
 
 #region		//在使用 Visual Studio Code Editor 的大纲特性时，指定一个可展开或折叠的代码块
 #endregion	//标识着 #region 块的结束
+```
 
-//大神用法
+> **大神用法**
+```
 #define  CONNECT(a,b)   a##b	//##粘连两个标识符，只有宏定义中使用(#define)
 int  CONNECT(a,1);			//int a1
-
-	//传统方式：
+```
+> > 传统方式：
+```
 typedef struct _tag_Student Student;
 struct _tag_Student{
 	char* name;
 	int id;
 };
-	//用宏定义方式
+```
+
+> > 用宏定义方式
+```
 #define STRUCT(type)    typedef struct _tag_##type type;\
 		       struct _tag_##type
 STRUCT(Student){
 	char* name;
 	int id;
 }; 
+```
 
-//异常处理
+> **异常处理**
+```
 try	{throw a;}		//a为throwable
 catch(a)	{}
 finally	{}
+```
 
-
+> > 在 catch 块中使用 throw 语句来抛出当前的对象
+```
 class _throw{
 void _throw(){
-//在 catch 块中使用 throw 语句来抛出当前的对象
 try{
 	MethodThatThrowsException();
 }
@@ -279,11 +321,13 @@ catch (Exception ex){
 	throw new Exception("oops!", ex);
 }
 }}
+```
 
-//System.ApplicationException 类：
-//支持由应用程序生成的异常。所以程序员定义的异常都应派生自该类。
+> **System.ApplicationException 类：**
+> > 支持由应用程序生成的异常。所以程序员定义的异常都应派生自该类。
 
-//输入与输出
+> **输入与输出**
+```
 using System;
 class _IO{
 void _IO(){
@@ -297,18 +341,20 @@ void _IO(){
 	convert.toint32/todouble("32"); //convert用于不同类型数据之间的转化
 	int.Parse("32");	//这个也能转化
 }}
+```
 
-//正则表达式：匹配专用，可以用于输入readline()的整理
+> **正则表达式：匹配专用，可以用于输入readline()的整理**
 //Regex 类用于表示一个正则表达式
-//自己去看吧~[https://www.runoob.com/csharp/csharp-regular-expressions.html]
+//[自己去看吧~](https://www.runoob.com/csharp/csharp-regular-expressions.html)
 
-//文件的输入与输出
-//[https://www.runoob.com/csharp/csharp-file-io.html]
+> **[文件的输入与输出](https://www.runoob.com/csharp/csharp-file-io.html)**
 
-//特性，类似于Java的/**   */，生成说明注释
+> **特性，类似于Java的/\*\*   \*/，生成说明注释**
+```
 [attribute(positional_parameters, name_parameter = value, ...)]
 class || method || 变量 ......
 //[https://www.runoob.com/csharp/csharp-attribute.html]
+```
 
 /*反射：
 允许在运行时查看特性（attribute）信息。
