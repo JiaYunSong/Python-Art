@@ -6,7 +6,7 @@ using System;
 ```
 > 包含 System 命名空间
 ```
-class hello{	\/\*注释\*\/
+class hello{	/*注释*/
 	static void Main(string\[\] args){
 ```
 
@@ -50,6 +50,7 @@ namespace first{
 ```
 > > 可以多个class
 > > 构造函数、析构函数、静态成员...
+
 > **变量...**
 ```
 decimal a=10;
@@ -75,6 +76,7 @@ decimal a=10;
 		dynamic f=a,g=b;
 ```
 > > 存储任何类型的值在动态数据类型变量中
+
 > **字符串**
 ```
 		"hhh\"hhh\nhhh"	==
@@ -84,11 +86,13 @@ decimal a=10;
 		"hhh" + "hhh"
 ```
 > > 字符串一堆方法：拆分，复制...
+
 > **可空类型，即可以赋值为null**
 ```
 		int? a,b=null;	//a==null
 		int a;		//a==0
 ```
+
 > **合并运算符**
 ```
 		int b=a ?? 5;	//a为null则b=5,否则b=a
@@ -102,6 +106,7 @@ decimal a=10;
  			{8, 9, 10, 11}	/*  初始化索引号为 2 的行 */
 			};
 ```
+
 > **交错数组**
 ```
 		int[][] scores = new int[5][];
@@ -117,6 +122,7 @@ decimal a=10;
 		/*从数组的第一个元素开始复制某个范围的元素
 			到另一个数组的第一个元素位置*/
 ```
+
 > **其他运算符**
 ```
 		&a	//地址
@@ -158,14 +164,12 @@ decimal a=10;
 		public static Box operator+ (Box b, Box c){...}
 ```
 > > 可重载
-> > * \+, \-, !, \~, \+\+, \-\-，
-> >  * ( op-type operand )
-		+, -, *, /, %，==, !=, <, >, <=, >=
-		( op-type operand, op-type2 operand2 )
-		//不可直接重载
-		&&, ||
-		//不可重载
-		+=, -=, *=, /=, %=，=, ., ?:, ->, new, is, sizeof, typeof
+> > * \+, \-, !, \~, \+\+, \-\-		( op-type operand )
+> > * \+, \-, \*, \/, %，\=\=, \!\=, \<, \>, \<\=, \>\=	( op-type operand, op-type2 operand2 )
+> > 不可直接重载
+> > * &&, ||
+> > 不可重载
+> > * +=, -=, *=, /=, %=，=, ., ?:, ->, new, is, sizeof, typeof
 
 		(int a)	//按值传递
 		(ref int a)	//引用
